@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dados</title>
+  </head>
+  <body>
+    <h2>Introduce 2 6 o 12 para escoger el tipo de dado:</h2>
+
+    <input type="text" id="entradaDado" />
+
+    <button onclick="procesarEntradaDado()">Enviar</button>
+
+    <p id="mensajeResultado"></p>
+
+    <script>
+      function procesarEntradaDado() {
+        let tipoDado = document.getElementById("entradaDado").value;
+        alert("Has introducido: " + tipoDado);
+        dado.numeroCaras = tipoDado;
+        dado.tirar();
+      }
+
+      let dado = {
+        numeroCaras: null,
+        tirar: function () {
+          let resultado = Math.floor(Math.random() * this.numeroCaras) + 1;
+          if (resultado == 1) {
+            document.getElementById("mensajeResultado").innerText =
+              "Has ganado";
+          } else {
+            document.getElementById("mensajeResultado").innerText =
+              "Has perdido";
+          }
+        },
+      };
+    </script>
+  </body>
+</html>
