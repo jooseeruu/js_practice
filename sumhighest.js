@@ -1,6 +1,7 @@
 function sumArray(array) {
   let maxValue = array[0];
   let minValue = array[0];
+  let finalSum = 0;
 
   for (let index = 0; index < array.length; index++) {
     if (array[index] > maxValue) {
@@ -11,16 +12,10 @@ function sumArray(array) {
     }
   }
 
-  for (let j = 0; j < array.length; j++) {
-    if (array[j] === maxValue || array[j] === minValue) {
-      array.splice(j, 1);
-      j--;
-    }
-  }
-
-  let finalSum = 0;
   for (let x = 0; x < array.length; x++) {
-    finalSum += array[x];
+    if (array[x] !== maxValue && array[x] !== minValue) {
+      finalSum += array[x];
+    }
   }
 
   return finalSum;
