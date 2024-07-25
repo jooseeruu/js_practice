@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo de DOM</title>
+    <style>
+      #miId {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="miId">Hola Mundo</h1>
+
+    <script>
+      /**
+       * El Modelo de Objetos del Documento (DOM) es una interfaz de programación
+       * para documentos web. Permite a un script acceder y manipular el contenido
+       * del documento, cambiar la estructura del documento, su estilo y comportamiento.
+       */
+
+      // Acceder a un elemento del DOM por su id
+      var miElemento = document.getElementById("miId");
+
+      // Cambiar el contenido de un elemento
+      miElemento.innerHTML = "Nuevo contenido";
+
+      // Cambiar el estilo de un elemento
+      miElemento.style.color = "blue";
+
+      // Crear un nuevo elemento
+      var nuevoElemento = document.createElement("p");
+
+      // Añadir contenido al nuevo elemento
+      nuevoElemento.innerHTML = "Soy un nuevo párrafo";
+
+      // Añadir el nuevo elemento al DOM
+      miElemento.appendChild(nuevoElemento);
+    </script>
+  </body>
+</html>
