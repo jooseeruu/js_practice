@@ -8,10 +8,16 @@ function Persona(nombre, apellido, email) {
   };
 }
 
+Persona.prototype.tel = "644732234";
+
 let padre = new Persona("Juan", "Perez", "jperez@mail.com");
+padre.tel = "644732232";
+console.log(padre.tel);
 console.log(padre.nombreCompleto());
 
 let madre = new Persona("Laura", "Quintero", "lquintero@mail.com");
+madre.tel = "644732231";
+console.log(madre.tel);
 console.log(madre.nombreCompleto());
 
 padre.nombre = "Carlos";
@@ -27,9 +33,6 @@ let miCadena2 = "Hola";
 
 let miNumero = new Number(1);
 let miNumero2 = 1;
-
-let miBoolean = new Boolean(false);
-let miBoolean = false;
 
 let miArreglo1 = new Array();
 let miArreglo2 = [];
