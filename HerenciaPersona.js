@@ -37,5 +37,27 @@ class Persona {
     );
   }
 }
+class Empleado extends Persona {
+  static contadorEmpleados = 0;
+
+  constructor(nombre, apellido, sueldo) {
+    super(nombre, apellido);
+    this._sueldo = sueldo;
+    this._idEmpleado = ++Empleado.contadorEmpleados;
+  }
+
+  get idEmpleado() {
+    return this._idEmpleado;
+  }
+
+  get sueldo() {
+    return this._sueldo;
+  }
+
+  set sueldo(nuevoSueldo) {
+    this._sueldo = nuevoSueldo;
+  }
+}
+
 let persona = new Persona("Mariano", "Diaz", 18);
 console.log(persona.nombreCompleto());
